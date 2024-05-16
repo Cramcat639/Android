@@ -1,0 +1,13 @@
+py -m venv fastapi-env
+
+fastapi-env\Scripts\activate.bat    CMD
+
+Set-ExecutionPolicy RemoteSigned -Scope Process   VISUAL STUDIO CODE
+.\fastapi-env\Scripts\Activate      VISUAL STUDIO CODE
+
+pip freeze
+
+
+uvicorn app:app --reload
+
+uvicorn app:app --host 10.1.105.14 --port 8000 --reload
