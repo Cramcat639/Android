@@ -18,6 +18,56 @@
         android:scaleType="centerCrop"
         android:src="@drawable/home" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/gotham"
+        android:text="Relé"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/activar"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshapewhitebg"
+        android:fontFamily="@font/calibri"
+        android:text="Activar"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#96ffffff"
+        android:textSize="16sp" />
+    <Button
+        android:id="@+id/apagar"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/buttonshapewhitebg"
+        android:fontFamily="@font/calibri"
+        android:text="Apagar"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#96ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/gotham"
+        android:text="Aqui puedes modificar tus datos"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
   </FrameLayout>
 
 
@@ -68,17 +118,6 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_marginTop="200dp"
-        android:fontFamily="@font/gotham"
-        android:text="Aqui puedes modificar tus datos"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="16sp" />
 
   </LinearLayout>
 

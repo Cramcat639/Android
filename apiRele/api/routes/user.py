@@ -4,6 +4,7 @@ from models.user import user as user_model
 from schemas.user import User
 from typing import List
 from passlib.context import CryptContext
+import httpx
 
 
 
@@ -12,6 +13,9 @@ router = APIRouter()
 
 # Crear un objeto CryptContext para encriptar contraseñas
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+# IP del ESP8266
+ESP8266_IP = "http://192.168.2.54"
 
 
 @router.get("/user", tags=["user"], response_model=List[User], description="lista todos los usuarios")
@@ -41,6 +45,7 @@ def get_user_id_by_credentials(user_data: dict = Body(...)):
     except HTTPException:
         raise  # Propaga las excepciones de HTTPException directamente
     except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -92,4 +97,28 @@ def delete_user(user_id: int):
         # Deshacer la transacción en caso de error
         conn.rollback()
         raise HTTPException(status_code=500, detail=str(e))
-    
+
+# Nuevas rutas para controlar el ESP8266
+@router.post("/rele/encender", tags=["control"], description="Enciende el relé del ESP8266")
+async def encender_rele():
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.get(f"{ESP8266_IP}/1")
+            response.raise_for_status()
+            return {"status": "RELE ENCENDIDO", "response": response.text}
+        except httpx.HTTPStatusError as exc:
+            raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/rele/apagar", tags=["control"], description="Apaga el relé del ESP8266")
+async def apagar_rele():
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.get(f"{ESP8266_IP}/0")
+            response.raise_for_status()
+            return {"status": "RELE APAGADO", "response": response.text}
+        except httpx.HTTPStatusError as exc:
+            raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
