@@ -1,34 +1,45 @@
-# LoginUI-Android
-Login User Interface in android with innovative, beautiful and creative background 😊😊😉
+# Android APP CRUD
 
-## 📸 Screenshots
+## Descripción
 
-**Please click the image below to enlarge.**
+Este repositorio contiene una aplicación Android que implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar). 
+La aplicación permite al usuario gestionar una base de datos de elementos.
 
-<img src="https://github.com/Shashank02051997/LoginUI-Android/blob/master/Screenshots/Screenshot_20181211-033917.png" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/LoginUI-Android/blob/master/Screenshots/Screenshot_20181211-033921.png" height="600" width="300" hspace="40">
+## Características
 
-<img src="https://github.com/Shashank02051997/LoginUI-Android/blob/master/Screenshots/Screenshot_20181211-033951.png" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/LoginUI-Android/blob/master/Screenshots/Screenshot_20181211-033955.png" height="600" width="300" hspace="40">
+- **CRUD Completo**: Permite crear, leer, actualizar y eliminar elementos en la base de datos.
+- **Interfaz de Usuario Intuitiva**: Diseñada para ser fácil de usar y navegar.
 
-## Contributing
+## Requisitos
 
-Please fork this repository and contribute back using
-[pull requests](https://github.com/Shashank02051997/LoginUI-Android/pulls).
+- Android Studio
 
-Any contributions, large or small, major features, bug fixes, are welcomed and appreciated
-but will be thoroughly reviewed .
+## Instalación
 
-### Contact - Let's become friend
-- [Twitter](https://twitter.com/shashank020597)
-- [Github](https://github.com/Shashank02051997)
-- [Linkedin](https://www.linkedin.com/in/shashank-singhal-a87729b5/)
-- [Facebook](https://www.facebook.com/shashanksinghal02)
+1. **Clonar el repositorio**:
 
-### Like our facebook page
-- [Android UI's Bucket](https://www.facebook.com/androiduisbucket)
+    ```sh
+    git clone https://github.com/Cramcat639/Android-CRUD/tree/Without-API
+    ```
 
-## Donation
-If this project help you reduce time to develop, you can give me a cup of coffee :) 
+2. **Abrir el proyecto en Android Studio**:
 
-<a href="https://www.buymeacoffee.com/mXUuDW7" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+    - Selecciona `File > Open` y navega hasta la carpeta del proyecto clonado.
 
-### Show some :heart: and star the repo to support the project
+3. **Construir y ejecutar la aplicación en un dispositivo Android**:
+
+    - Conecta tu dispositivo Android y asegúrate de que la depuración USB esté habilitada.
+    - Selecciona `Run > Run 'app'` en Android Studio.
+
+## Uso
+
+1. **CRUD**:
+
+    - **Crear**: Agrega nuevos elementos a la base de datos.
+    - **Leer**: Visualiza los elementos almacenados.
+    - **Actualizar**: Modifica los elementos existentes.
+    - **Eliminar**: Borra los elementos no deseados.
+
+## Licencia
+
+- Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo LICENSE para más detalles.
