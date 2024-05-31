@@ -1,4 +1,4 @@
-package com.cramcat.platform.CRUDapp;
+package com.cramcat.platform.CRUDarduino;
 
 import androidx.appcompat.app.AppCompatActivity;
 

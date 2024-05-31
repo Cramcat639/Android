@@ -1,4 +1,4 @@
-package com.cramcat.platform.CRUDapp;
+package com.cramcat.platform.CRUDarduino;
 
 import android.os.AsyncTask;
 import android.util.Log;

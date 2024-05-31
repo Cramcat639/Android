@@ -1,4 +1,4 @@
-package com.cramcat.platform.CRUDapp;
+package com.cramcat.platform.CRUDapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONException;
 
 public class Register extends AppCompatActivity {
 
@@ -27,6 +25,7 @@ public class Register extends AppCompatActivity {
         TextView tvemail = findViewById(R.id.email);
         TextView tvRePass = findViewById(R.id.rePass);
 
+
         Button home = findViewById(R.id.home);
         Button registro = findViewById(R.id.registro);
 
@@ -37,53 +36,40 @@ public class Register extends AppCompatActivity {
                 String nick = String.valueOf(tvNick.getText());
                 String pass = String.valueOf(tvPass.getText());
                 String rePass = String.valueOf(tvRePass.getText());
-                Integer isadmin = 0;
-                Integer isblock = 0;
-                Integer id= 0;
 
                 if (nick.matches("^[a-zA-Z0-9]{3,16}$")) {
                     if (email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
                         if (pass.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,32}$")) {
+                            // La contraseña cumple con los requisitos.
                             if (pass.equals(rePass)) {
-                                Api api = new Api();
-                                try {
-                                    api.registerUserAsync(id, nick, email, pass,isadmin ,isblock, new Api.ApiCallback() {
-                                        @Override
-                                        public void onApiResult(String result) throws JSONException {
-                                            if (result != null) {
-                                                // Registro exitoso
-                                                Intent intent = new Intent(Register.this, Crud.class);
-                                                startActivity(intent);
-                                            } else {
-                                                pop.showNewDialog(context, "Error", "Fallo en el registro.");
-                                            }
-                                        }
-                                    });
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                    pop.showNewDialog(context, "Error", "Fallo en el registro.");
-                                }
+                                DB db = new DB(context);
+                                db.insert(nick, email, pass);
+                                Integer idActual = db.encuentraID(email);
+                                Intent intent = new Intent(Register.this, Crud.class);
+                                intent.putExtra("id", String.valueOf(idActual));
+                                startActivity(intent);
                             } else {
+
                                 pop.showNewDialog(context, "Error", "Las contraseñas no coinciden");
                             }
                         } else {
-                            pop.showNewDialog(context, "Error", "La contraseña debe tener entre 8 y 32 caracteres, contener al menos 1 letra minúscula, 1 letra mayúscula y 1 número.");
+                            // La contraseña no cumple con los requisitos.
+                            pop.showNewDialog(context, "Error", "la contraseña debe tener entre 8 y 32 caracteres, contener almenos 1 letra minúscula, 1 letra mayuscula y 1 numero.");
                         }
                     } else {
                         pop.showNewDialog(context, "Error", "Este no es un mail valido.");
                     }
-                } else {
+                }else{
                     pop.showNewDialog(context, "Error", "El nick debe contener entre 3 y 16 caracteres y no puede contener caracteres especiales.");
                 }
             }
         });
 
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                finish();
-                Toast.makeText(context, "Home", Toast.LENGTH_LONG).show();
-            }
+            public void onClick(View view) {finish();
+                Toast.makeText(context, "Home",Toast.LENGTH_LONG).show();}
         });
     }
 }

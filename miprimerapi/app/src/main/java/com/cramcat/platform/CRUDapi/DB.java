@@ -1,4 +1,4 @@
-package com.cramcat.platform.CRUDapp;
+package com.cramcat.platform.CRUDapi;
 
 import android.content.ContentValues;
 import android.content.Context;

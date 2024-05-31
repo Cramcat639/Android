@@ -1,4 +1,4 @@
-package com.cramcat.platform.CRUDapp;
+package com.cramcat.platform.CRUDapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -63,58 +63,7 @@ public class Crud extends AppCompatActivity implements Api.CredentialsById.OnTas
         Button eliminar = findViewById(R.id.eliminar);
         Button cerrar = findViewById(R.id.cerrar);
         Button guardar = findViewById(R.id.guardar);
-        Button activar = findViewById(R.id.activar);
-        Button apagar = findViewById(R.id.apagar);
 
-        activar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Api.turnOnRelayAsync(new Api.ApiCallback() {
-                        @Override
-                        public void onApiResult(String result) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if (result != null) {
-                                        Toast.makeText(Crud.this, "Relé encendido", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(Crud.this, "Error al encender el relé", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                        }
-                    });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        apagar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Api.turnOffRelayAsync(new Api.ApiCallback() {
-                        @Override
-                        public void onApiResult(String result) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if (result != null) {
-                                        Toast.makeText(Crud.this, "Relé apagado", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(Crud.this, "Error al apagar el relé", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                        }
-                    });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
