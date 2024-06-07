@@ -19,7 +19,7 @@ import okhttp3.*;
 
 public class Api {
 
-    static String ip= "http://192.168.2.53:8000";
+    static String ip= "http://192.168.1.159:8000";
 
     public void loginAsync(String mail, String password, ApiCallback callback) throws JSONException {
         try {
