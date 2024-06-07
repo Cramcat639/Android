@@ -10,6 +10,19 @@ La aplicación permite al usuario gestionar una base de datos de elementos.
 - **CRUD Completo**: Permite crear, leer, actualizar y eliminar elementos en la base de datos.
 - **Interfaz de Usuario Intuitiva**: Diseñada para ser fácil de usar y navegar.
 
+## Capturas
+
+<table>
+    <tr>
+        <td>Login</td>
+        <td>Registro</td>
+    </tr>
+    <tr>
+        <td><img src="https://i.postimg.cc/1zDghTD8/login.jpg" alt="Login" width="250"></td>
+        <td><img src="https://i.postimg.cc/Nj3ynY2h/register.jpg" alt="Registro" width="250"></td>
+    </tr>
+</table>
+
 ## Requisitos
 
 - Android Studio
