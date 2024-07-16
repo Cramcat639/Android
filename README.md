@@ -4,6 +4,7 @@
 
 Este repositorio contiene una aplicación Android que implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) y se conecta a una placa Arduino para controlar un relé. 
 La aplicación permite al usuario gestionar una base de datos de elementos y, a través de la conexión con Arduino, activar y desactivar un relé.
+El sistema de la API esta hecho con Python(FastApi).
 
 ## Características
 
